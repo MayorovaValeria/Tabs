@@ -1,0 +1,254 @@
+<html>
+<head>
+
+	<title>jQuery</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="tab.js"></script>
+	<link href="style.css" rel="stylesheet" />
+	
+</head>
+<body>
+
+<h1>jQuery</h1>
+
+<div class="tabs">
+
+	<ul class="tabs__caption">
+		<li class="active">Описание</li>
+		<li>HTML</li>
+		<li>CSS</li>
+		<li>jQuery</li>
+	</ul>
+
+	<div class="tabs__content  active">
+		<p>Майорова В.А. студентка СГЭУ ПИЭЭ-31</p>
+		<p>Задание: С помощью jQuery создайте на странице 4 вкладки между которыми можно преключаться</p>
+	</div>
+
+	<div class="tabs__content">
+		<textarea cols="80" rows="6">
+			<html>
+			<head>
+				<title>jQuery</title>
+				<meta charset="utf-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+				<script src="tab.js"></script>
+				<link href="style.css" rel="stylesheet" />
+			</head>
+			
+			<body>
+			
+			<h1>jQuery</h1>
+			
+			<div class="tabs">
+			
+				<ul class="tabs__caption">
+					<li class="active">Описание</li>
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>jQuery</li>
+				</ul>
+			
+				
+			
+			</div>
+			</body>
+			</html>
+		</textarea>
+		</div>
+
+	<div class="tabs__content">
+		<textarea cols="80" rows="6">
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 50px;
+	font: 14px Arial, sans-serif;
+}
+a {
+	color: #9400d3;
+}
+a:hover {
+	text-decoration: none;
+}
+p {
+	padding: 8px 0;
+}
+h1 {
+	font-size: 24px;
+	font-weight: normal;
+	margin: 0 0 35px;
+}
+h2 {
+	font-size: 18px;
+	font-weight: normal;
+	margin: 0 0 20px;
+}
+body {
+	background: #c7c7ff;
+}
+.text {
+	max-width: 600px;
+	margin: 0 0 30px;
+	background: #FFF;
+	border: 5px solid #c8a2c8;
+	border-radius: 5px;
+	padding: 7px 15px;
+	box-sizing: border-box;
+}
+
+.tabs {
+	max-width: 600px;
+	margin: 0 0 30px;
+}
+.tabs__caption {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+	list-style: none;
+	position: relative;
+	margin: -1px 0 0 -1px;
+}
+.tabs__caption li:last-child:before {
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	right: -2px;
+	z-index: -1;
+	height: 5px;
+	background: #c8a2c8;
+}
+.tabs__caption:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+.tabs__caption li {
+	padding: 10px 20px;
+	margin: 1px 0 0 1px;
+	background: #ef98aa;
+	color: #FFF;
+	position: relative;
+	border: solid rgb(221, 51, 51);
+	border-width: 2px 2px 0;
+	border-radius: 5px 5px 0 0;
+	text-align: center;
+}
+.tabs__caption li:not(.active) {
+	cursor: pointer;
+}
+.tabs__caption li:not(.active):hover {
+	background: #ffe4e1;
+	border-color: #ffe4e1;
+}
+.tabs__caption .active {
+	background: #FFF;
+	color: #000;
+	border-color: #c71d26;
+}
+.tabs__caption .active:after {
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	right: 0;
+	height: 5px;
+	background: #FFF;
+}
+.tabs__content {
+	display: none;
+	background: #FFF;
+	border: 2px solid #8a2be2;
+	border-radius: 0 5px 5px 5px;
+	padding: 7px 15px;
+}
+.tabs__content.active {
+	display: block;
+}
+
+.vertical .tabs__caption {
+	float: left;
+	display: block;
+}
+.vertical .tabs__caption li {
+	float: none;
+	border-width: 2px 0 2px 2px;
+	border-radius: 5px 0 0 5px;
+}
+.vertical .tabs__caption li:last-child:before {
+	display: none;
+}
+.vertical .tabs__caption .active:after {
+	left: auto;
+	top: 0;
+	right: -2px;
+	bottom: 0;
+	width: 2px;
+	height: auto;
+}
+.vertical .tabs__content {
+	overflow: hidden;
+}
+
+@media screen and (max-width: 650px) {
+
+	.tabs__caption li {
+		-webkit-flex: 1 0 auto;
+		    -ms-flex: 1 0 auto;
+		        flex: 1 0 auto;
+	}
+	.vertical .tabs__caption {
+		float: none;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+	}
+	.vertical .tabs__caption li {
+		border-width: 2px 2px 0;
+		border-radius: 5px 5px 0 0;
+	}
+	.vertical .tabs__caption li:last-child:before {
+		display: block;
+	}
+	.vertical .tabs__caption .active:after {
+		top: auto;
+		bottom: -5px;
+		left: 0;
+		right: 0;
+		width: auto;
+		height: 5px;
+		background: #FFF;
+	}
+
+}
+</textarea>
+	</div>
+
+	<div class="tabs__content">
+		<textarea cols="80" rows="6">
+			(function($) {
+			$(function() {
+			
+				$('ul.tabs__caption').on('click', 'li:not(.active)', function() {
+					$(this)
+						.addClass('active').siblings().removeClass('active')
+						.closest('div.tabs').find('div.tabs__content').removeClass('active').eq($(this).index()).addClass('active');
+				});
+			
+			});
+			})(jQuery);
+		</textarea>
+		</div>
+
+</div>
+</body>
+</html>
